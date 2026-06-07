@@ -12,6 +12,11 @@
   background-color: transparent !important;
 }
 
+/* 页面底部背景透明，显示背景图 */
+#footer {
+  background-color: transparent !important;
+}
+
 /* 文字加一点点阴影，防止看不清 */
 body {
   text-shadow: 0 0 2px rgba(0,0,0,0.3);
