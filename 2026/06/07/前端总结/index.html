@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>前端开发知识总结 | 学习笔记</title><meta name="author" content="Mikaela"><meta name="copyright" content="Mikaela"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前端开发知识总结&gt; 本文档整理了HTML、CSS、JavaScript等前端开发常用知识点  一、HTML 基础1.1 单标签   标签 说明    &amp;lt;br&amp;gt; 换行   &amp;lt;hr&amp;gt; 水平线   1.2 基本骨架快速生成HTML基本骨架： 1!（英文） + 回车 或 ! + tab  1.3 常用标签   标签 说明    &amp;lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发知识总结">
+<meta property="og:url" content="http://example.com/2026/06/07/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:description" content="前端开发知识总结&gt; 本文档整理了HTML、CSS、JavaScript等前端开发常用知识点  一、HTML 基础1.1 单标签   标签 说明    &amp;lt;br&amp;gt; 换行   &amp;lt;hr&amp;gt; 水平线   1.2 基本骨架快速生成HTML基本骨架： 1!（英文） + 回车 或 ! + tab  1.3 常用标签   标签 说明    &amp;lt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar.jpg">
+<meta property="article:published_time" content="2026-06-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-07T15:25:56.001Z">
+<meta property="article:author" content="Mikaela">
+<meta property="article:tag" content="软件开发,网络安全,技术笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "前端开发知识总结",
+  "url": "http://example.com/2026/06/07/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/",
+  "image": "http://example.com/img/avatar.jpg",
+  "datePublished": "2026-06-06T16:00:00.000Z",
+  "dateModified": "2026-06-07T15:25:56.001Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Mikaela",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2026/06/07/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '前端开发知识总结',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/img/bg.jpg);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">学习笔记</span></a><a class="nav-page-title" href="/"><span class="site-name">前端开发知识总结</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">前端开发知识总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-06-06T16:00:00.000Z" title="发表于 2026-06-07 00:00:00">2026-06-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-06-07T15:25:56.001Z" title="更新于 2026-06-07 23:25:56">2026-06-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="前端开发知识总结"><a href="#前端开发知识总结" class="headerlink" title="前端开发知识总结"></a>前端开发知识总结</h1><p>&gt; 本文档整理了HTML、CSS、JavaScript等前端开发常用知识点</p>
+<hr>
+<h2 id="一、HTML-基础"><a href="#一、HTML-基础" class="headerlink" title="一、HTML 基础"></a>一、HTML 基础</h2><h3 id="1-1-单标签"><a href="#1-1-单标签" class="headerlink" title="1.1 单标签"></a>1.1 单标签</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;lt;br&amp;gt;</code></td>
+<td>换行</td>
+</tr>
+<tr>
+<td><code>&amp;lt;hr&amp;gt;</code></td>
+<td>水平线</td>
+</tr>
+</tbody></table>
+<h3 id="1-2-基本骨架"><a href="#1-2-基本骨架" class="headerlink" title="1.2 基本骨架"></a>1.2 基本骨架</h3><p>快速生成HTML基本骨架：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!（英文） + 回车 或 ! + tab</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-常用标签"><a href="#1-3-常用标签" class="headerlink" title="1.3 常用标签"></a>1.3 常用标签</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;lt;h1&amp;gt;</code> 到 <code>&amp;lt;h6&amp;gt;</code></td>
+<td>标题标签</td>
+</tr>
+<tr>
+<td><code>&amp;lt;p&amp;gt;</code></td>
+<td>段落标签</td>
+</tr>
+<tr>
+<td><code>&amp;lt;img src=&quot;&quot;&amp;gt;</code></td>
+<td>图片标签</td>
+</tr>
+<tr>
+<td><code>&amp;lt;a href=&quot;&quot;&amp;gt;网页显示的文字&amp;lt;/a&amp;gt;</code></td>
+<td>超链接</td>
+</tr>
+<tr>
+<td><code>&amp;lt;video src=&quot;&quot;&amp;gt;</code></td>
+<td>视频标签</td>
+</tr>
+<tr>
+<td><code>&amp;lt;audio src=&quot;&quot;&amp;gt;</code></td>
+<td>音频标签</td>
+</tr>
+</tbody></table>
+<h3 id="1-4-编辑器快捷键"><a href="#1-4-编辑器快捷键" class="headerlink" title="1.4 编辑器快捷键"></a>1.4 编辑器快捷键</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Alt + z</code></td>
+<td>折行</td>
+</tr>
+<tr>
+<td><code>Ctrl + /</code></td>
+<td>一键注释</td>
+</tr>
+</tbody></table>
+<h3 id="1-5-表单相关标签"><a href="#1-5-表单相关标签" class="headerlink" title="1.5 表单相关标签"></a>1.5 表单相关标签</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;lt;input&amp;gt;</code></td>
+<td>输入标签，可添加 <code>placeholder</code> 属性在文本框中添加注释</td>
+</tr>
+<tr>
+<td><code>&amp;lt;select&amp;gt;</code></td>
+<td>下拉菜单标签，添加 <code>selected</code> 属性设置默认选中</td>
+</tr>
+<tr>
+<td><code>&amp;lt;textarea&amp;gt;</code></td>
+<td>文本域标签</td>
+</tr>
+<tr>
+<td><code>&amp;lt;button&amp;gt;</code></td>
+<td>按钮标签</td>
+</tr>
+</tbody></table>
+<p><strong>按钮要生效</strong>，要用 <code>&lt;form action=&quot;&quot;&gt;</code> 包裹，里面的 submit 提交到指定地址。</p>
+<h3 id="1-6-其他标签"><a href="#1-6-其他标签" class="headerlink" title="1.6 其他标签"></a>1.6 其他标签</h3><ul>
+<li><code>&amp;lt;label&amp;gt;</code>：标签标签</li>
+</ul>
+<hr>
+<h2 id="二、CSS-基础"><a href="#二、CSS-基础" class="headerlink" title="二、CSS 基础"></a>二、CSS 基础</h2><h3 id="2-1-基本概念"><a href="#2-1-基本概念" class="headerlink" title="2.1 基本概念"></a>2.1 基本概念</h3><p><strong>键值对</strong>：属性名和属性值成对出现叫键值对</p>
+<h3 id="2-2-文本样式"><a href="#2-2-文本样式" class="headerlink" title="2.2 文本样式"></a>2.2 文本样式</h3><p><strong>单行文字垂直居中</strong>：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">height</span> = <span class="attribute">line-height</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>文本缩进</strong>：使用 <code>text-indent</code> 属性</p>
+<h3 id="2-3-复合选择器"><a href="#2-3-复合选择器" class="headerlink" title="2.3 复合选择器"></a>2.3 复合选择器</h3><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>后代选择器</td>
+<td><code>div span {}</code></td>
+<td>空格隔开，div 中所有 span 标签</td>
+</tr>
+<tr>
+<td>子代选择器</td>
+<td><code>div &amp;gt; span {}</code></td>
+<td>用 <code>&amp;gt;</code> 隔开，div 中子代 span 标签</td>
+</tr>
+<tr>
+<td>并集选择器</td>
+<td><code>p, div, span {}</code></td>
+<td>选多组标签，同时设置</td>
+</tr>
+<tr>
+<td>交集选择器</td>
+<td><code>选择器连写</code></td>
+<td>同时满足所有标签才生效，如果有标签选择器，要写在最前面</td>
+</tr>
+<tr>
+<td>伪类选择器</td>
+<td><code>a:hover {}</code></td>
+<td>例如 hover 悬停效果</td>
+</tr>
+</tbody></table>
+<h3 id="2-4-CSS-特性"><a href="#2-4-CSS-特性" class="headerlink" title="2.4 CSS 特性"></a>2.4 CSS 特性</h3><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>继承性</td>
+<td>子级继承父级，本身有样式不覆盖</td>
+</tr>
+<tr>
+<td>层叠性</td>
+<td>① 相同属性会覆盖：后盖前&lt;br&gt;② 不同都生效叠加</td>
+</tr>
+<tr>
+<td>优先级</td>
+<td>选中标签的范围越大，优先级越低</td>
+</tr>
+</tbody></table>
+<h3 id="2-5-元素类型"><a href="#2-5-元素类型" class="headerlink" title="2.5 元素类型"></a>2.5 元素类型</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>块级</td>
+<td><code>div</code></td>
+</tr>
+<tr>
+<td>行内</td>
+<td><code>span</code></td>
+</tr>
+<tr>
+<td>行内块</td>
+<td><code>img</code></td>
+</tr>
+</tbody></table>
+<p><strong>改变显示模式</strong>：使用 <code>display</code> 属性</p>
+<h3 id="2-6-盒子模型"><a href="#2-6-盒子模型" class="headerlink" title="2.6 盒子模型"></a>2.6 盒子模型</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>border</code></td>
+<td>边框线（实线 <code>solid</code>，虚线 <code>dashed</code>，点线 <code>dotted</code>）</td>
+</tr>
+<tr>
+<td><code>padding</code></td>
+<td>内边距</td>
+</tr>
+<tr>
+<td><code>margin</code></td>
+<td>外边距&lt;br&gt;• 不会撑大盒子&lt;br&gt;• 左右设 <code>auto</code> 自适应，会版心居中，但必须有宽度否则失效&lt;br&gt;• 其余和内边距写法一样</td>
+</tr>
+</tbody></table>
+<h3 id="2-7-常用技巧"><a href="#2-7-常用技巧" class="headerlink" title="2.7 常用技巧"></a>2.7 常用技巧</h3><p><strong>清除默认样式</strong>：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 并集选择器 */</span></span><br><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉列表项目符号</strong>：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">list-style</span>: none;</span><br></pre></td></tr></table></figure>
+
+<p><strong>调整文字基线</strong>：<br>如 <code>h2</code> 生成的文字相较于其他基线偏下，可设置行高为 1 调整。</p>
+<h3 id="2-8-浮动"><a href="#2-8-浮动" class="headerlink" title="2.8 浮动"></a>2.8 浮动</h3><p>浮动特性：</p>
+<ol>
+<li>顶对齐</li>
+<li>行内块</li>
+<li>脱标（脱离标准流）</li>
+</ol>
+<hr>
+<h2 id="三、网页制作技巧"><a href="#三、网页制作技巧" class="headerlink" title="三、网页制作技巧"></a>三、网页制作技巧</h2><p>（内容待补充）</p>
+<hr>
+<p>&gt; 本文档持续更新中…</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Mikaela</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2026/06/07/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/">http://example.com/2026/06/07/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">学习笔记</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/06/07/CTFshow%20vip%E9%A2%98%E7%9B%AE%E9%99%90%E5%85%8Dwp%EF%BC%88%E6%B3%84%E9%9C%B2%EF%BC%89/" title="CTFshow vip题目限免wp（泄露）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">CTFshow vip题目限免wp（泄露）</div></div><div class="info-2"><div class="info-item-1">CTFshow vip题目限免wp（泄露）源码泄露题目说了源码泄露，看看源码  得到flag ctfshow{aba7d273-ad25-446b-85cb-1158baab7646} 前台JS绕过方法一：Ctrl+U直接看源码 方法二：浏览器右上角更多工具里 → 打开开发者工具 （此时已打开控制台，可在元素里直接看源代码）→ 点击右上角「⋮」→ 设置 → 调试器 → 勾选「禁用 JavaScript」 这时候可以右键了  得到flag ctfshow{03d564d9-f7af-4f71-923c-81c0dd93674a} 协议头信息泄露题目提示抓包，那F12控制台抓包试试，看看协议头  果然有flag ctfshow{36469dcf-0eec-457c-87ff-7d8ed7c0132f} 用其他抓包方式也行（如Burp）  robots后台泄露Robots 协议（Robots Exclusion Protocol）是一种网站与网络爬虫之间的“君子协定”，通过在站点根目录放置 robots.txt 文件，告知爬虫哪些路径可以抓取、哪些禁止访问，从而保护隐私、优化抓取效率、...</div></div></div></a><a class="pagination-related" href="/2026/06/07/java%E6%80%BB%E7%BB%93/" title="Java 开发知识总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Java 开发知识总结</div></div><div class="info-2"><div class="info-item-1">Java 开发知识总结&gt; 本文档整理了Java开发中常用的类、方法、框架和最佳实践  一、字符串操作1.1 常用方法   方法 说明    .length() 获取字符串长度   .charAt(n) 取出第n个字符   .contains(字符串) 判断是否包含指定字符串   .trim() 去除字符串前后的空格   .indexOf(&quot;字符串&quot;) 查找字符串首次出现的位置，返回-1表示没找到   .indexOf(&quot;字符串&quot;, 开始索引值) 从指定位置开始查找   .substring(n) 截取第n个字符后的字符串（不包括n）   .substring(n, n+m) 截取从第n个字符开始的m个字符   .endsWith(&quot;字符串&quot;) 判断是否以指定字符串结尾，返回布尔值   .startsWith(&quot;字符串&quot;) 判断是否以指定字符串开头，返回布尔值   .replaceAll(&quot;要替换的值&quot;, &quot;新值&quot;) 全局替换字符串   .split(&qu...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Mikaela</div><div class="author-info-description">记录软件开发学习历程、网安解题思路与实践笔记</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">前端开发知识总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81HTML-%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">一、HTML 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%8D%95%E6%A0%87%E7%AD%BE"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 单标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%9F%BA%E6%9C%AC%E9%AA%A8%E6%9E%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 基本骨架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 常用标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E7%BC%96%E8%BE%91%E5%99%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4 编辑器快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E8%A1%A8%E5%8D%95%E7%9B%B8%E5%85%B3%E6%A0%87%E7%AD%BE"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.5 表单相关标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E5%85%B6%E4%BB%96%E6%A0%87%E7%AD%BE"><span class="toc-number">1.1.6.</span> <span class="toc-text">1.6 其他标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81CSS-%E5%9F%BA%E7%A1%80"><span class="toc-number">1.2.</span> <span class="toc-text">二、CSS 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%96%87%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 文本样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 复合选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-CSS-%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 CSS 特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E5%85%83%E7%B4%A0%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5 元素类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.6.</span> <span class="toc-text">2.6 盒子模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-number">1.2.7.</span> <span class="toc-text">2.7 常用技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-%E6%B5%AE%E5%8A%A8"><span class="toc-number">1.2.8.</span> <span class="toc-text">2.8 浮动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BD%91%E9%A1%B5%E5%88%B6%E4%BD%9C%E6%8A%80%E5%B7%A7"><span class="toc-number">1.3.</span> <span class="toc-text">三、网页制作技巧</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/07/C%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93/" title="C 语言编程知识总结">C 语言编程知识总结</a><time datetime="2026-06-06T16:00:00.000Z" title="发表于 2026-06-07 00:00:00">2026-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/07/CTFshow%E5%85%83%E6%97%A6%E9%A2%98%E9%83%A8%E5%88%86wp/" title="CTFshow元旦题部分wp">CTFshow元旦题部分wp</a><time datetime="2026-06-06T16:00:00.000Z" title="发表于 2026-06-07 00:00:00">2026-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/07/java%E6%80%BB%E7%BB%93/" title="Java 开发知识总结">Java 开发知识总结</a><time datetime="2026-06-06T16:00:00.000Z" title="发表于 2026-06-07 00:00:00">2026-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/07/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/" title="前端开发知识总结">前端开发知识总结</a><time datetime="2026-06-06T16:00:00.000Z" title="发表于 2026-06-07 00:00:00">2026-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/07/CTFshow%20vip%E9%A2%98%E7%9B%AE%E9%99%90%E5%85%8Dwp%EF%BC%88%E6%B3%84%E9%9C%B2%EF%BC%89/" title="CTFshow vip题目限免wp（泄露）">CTFshow vip题目限免wp（泄露）</a><time datetime="2026-06-06T16:00:00.000Z" title="发表于 2026-06-07 00:00:00">2026-06-07</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Mikaela</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
